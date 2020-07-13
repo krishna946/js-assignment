@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Current Day : <span id="day"></span></h1>
+    <h1>Current Time : <span id="time"></span></h1>
+    <script>
+      let today = new Date();
+      /* get current day part start*/
+      let currentDay = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday ",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+    //   console.log(today.getDay())
+    document.getElementById("day").style.fontStyle = 'italic';
+      document.getElementById("day").innerHTML = currentDay[today.getDay()];
+    /* get current day part end*/
+
+      /* get current time part start*/
+      let hours = today.getHours();
+      let mints = today.getMinutes();
+      let sec = today.getSeconds();
+      document.getElementById("time").style.fontStyle= 'italic'
+      if (hours < 12) {
+        document.getElementById("time").innerHTML =
+          hours + " AM" + " : " + mints + " : " + sec;
+      } else if (hours === 12) {
+        document.getElementById("time").innerHTML =
+          hours + " PM" + " : " + mints + " : " + sec;
+      } else {
+        document.getElementById("time").innerHTML =
+          hours + " PM" + " : " + mints + " : " + sec;
+      }
+      /* get current time part end*/
+    </script>
+  </body>
+</html>
